@@ -1,6 +1,14 @@
 #!/bin/bash
 
-mkdir ./magento
-mkdir ./mnt
+git init -qqq
+git remote add origin https://github.com/roblefort/docker_testnegative
+git fetch origin -qqq
+git checkout origin/master -- compose
+mv compose/* ./
+mv compose/.gitignore ./
+mv compose/.vscode ./
+rm -rf compose .git
+git init
+
 cd ./magento 
 git clone -b develop git@github.com:Legends-Mkt/testnegative_magento.git .
