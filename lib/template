@@ -3,7 +3,7 @@
 git init -qqq
 git remote add origin https://github.com/roblefort/docker_testnegative
 git fetch origin -qqq
-git checkout origin/master -- compose
+git checkout origin/main -- compose
 mv compose/* ./
 mv compose/.gitignore ./
 rm -rf compose .git
