@@ -70,6 +70,7 @@ composer self-update --1
 ```
 # switch to web user
 sudo -Hsu www-data
+
 composer install
 php bin/magento maintenance:enable
 php bin/magento setup:upgrade
