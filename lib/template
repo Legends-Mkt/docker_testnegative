@@ -1,8 +1,5 @@
 #!/bin/bash
 
 git clone main https://github.com/roblefort/docker_testnegative
-
-mkdir ./magento
 cd ./magento 
 git clone -b develop git@github.com:Legends-Mkt/testnegative_magento.git .
-
