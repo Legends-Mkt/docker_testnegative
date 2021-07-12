@@ -8,9 +8,9 @@ Copy env.php to ./magento/app/etc/
 Create docker containers
 ```docker-compose up -d
 cd mnt
-chmod +x composer.sh```
+chmod +x composer.sh
 
 Then after containers have started to run:
-```docker-compose exec fpm /mnt/composer.sh```  
+docker-compose exec fpm /mnt/composer.sh```  
 
 Copy media content archive from staging magento server to ./magento/pub/media/
