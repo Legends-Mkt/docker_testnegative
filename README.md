@@ -6,10 +6,10 @@ Create working drectory for docker install with magento locally
 Copy env.php to ./magento/app/etc/
 
 Create docker containers
-```docker-compose up -d```
+```docker-compose up -d
+cd mnt
+chmod +x composer.sh```
 
-```cd mnt
-```chmod +x composer.sh```
 Then run:
 ```docker-compose exec fpm /mnt/composer.sh```  (After start all containers run)
 
