@@ -1,29 +1,39 @@
 ## docker_testnegative install directory
-Create working drectory for docker install with magento locally 
+Create *testnegative* directory for docker install with magento locally 
 
 *From within the new directory*, run:
 
 ```curl -s https://raw.githubusercontent.com/roblefort/docker_testnegative/main/lib/template | bash```
 
 Copy env.php to ./magento/app/etc/
+Copy media content archive from staging magento server to ./magento/pub/media/
 
-Create docker containers
+Create docker containers from folder testnegative (runs docker-compose.yml)
 ```
 docker-compose up -d
+# change file permissions for composer.sh
 cd mnt
 chmod +x composer.sh
 ```
-Then after containers have started to run:
+
+Docker hostnames services in stack containers:
+db - databases
+fpm - php-fpm
+varnish - varnish service
+elasticsearch - elasticsearch service
+redis - redis service
+rabbitmq - rabbitmq service
+
+Then after docker containers are all running:
 ```
 docker-compose exec fpm /mnt/composer.sh
 ```
-Copy media content archive from staging magento server to ./magento/pub/media/
 
-Restore databases backup for new environment
+Restore database backup from staging for new environment
 ```
 mysql -u magento2 -pmagento2 -h 127.0.0.1 -P33066
 use magento2;
-source /path/DBNAME.sql
+source [/path/DBNAME.sql]
 ```
 
 Edit hosts file 
@@ -41,7 +51,8 @@ UPDATE core_config_data SET value = 'https://local.testnegative.com/' WHERE conf
 UPDATE core_config_data SET value = 'https://local.testnegative.com/' WHERE config_id = '1438';
 UPDATE core_config_data SET value = 'https://local.testnegative.com/' WHERE config_id = '1653';
 ```
-Access to the container in order to be able to run the commands of Magento CLI: (Path: /app)
+
+Access to the container from folder testnegative in order to be able to run the commands of Magento CLI: (Path: /app)
 ```
 docker exec -it testnegative_fpm_1 bash
 mkdir /var/www/.composer/
