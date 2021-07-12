@@ -1,6 +1,7 @@
 ## docker_testnegative install directory
 Create working drectory for docker install with magento locally 
-*For within the new directory*, run:
+
+*From within the new directory*, run:
 ```curl -s https://raw.githubusercontent.com/roblefort/docker_testnegative/main/lib/template | bash```
 
 Copy env.php to ./magento/app/etc/
