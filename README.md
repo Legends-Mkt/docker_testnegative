@@ -64,6 +64,7 @@ docker-compose exec varnish varnishadm 'ban req.url ~ .'
 ```
 
 *MySQL access:*
+
 External:
 Host: host IP
 Port: 33066
