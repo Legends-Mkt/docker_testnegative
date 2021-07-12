@@ -66,7 +66,7 @@ docker-compose exec varnish varnishadm 'ban req.url ~ .'
 *MySQL access:*
 
 External:
-Host: host IP
+Host: (host IP)
 Port: 33066
 DB name: magento2
 DB user: magento2
