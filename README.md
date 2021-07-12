@@ -65,10 +65,11 @@ docker exec -it testnegative_fpm_1 bash
 mkdir /var/www/.composer/
 chown -R www-data /var/www/.composer/
 composer self-update --1 
-sudo -Hsu www-data
 ```
 #### Upgrade Magento:
 ```
+# switch to web user
+sudo -Hsu www-data
 composer install
 php bin/magento maintenance:enable
 php bin/magento setup:upgrade
