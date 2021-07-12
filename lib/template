@@ -1,9 +1,6 @@
 #!/bin/bash
 
-git clone main https://github.com/roblefort/docker_testnegative
-git checkout origin/main -- compose
-mv compose/* ./
-mv compose/.gitignore ./
-rm -rf compose .git
-git init
+mkdir ./magento
+cd ./magento 
+git clone -b develop git@github.com:Legends-Mkt/testnegative_magento.git .
 
