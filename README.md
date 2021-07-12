@@ -63,15 +63,16 @@ Clearing Varnish cache if need:
 docker-compose exec varnish varnishadm 'ban req.url ~ .'
 ```
 
-MySQL access:
+*MySQL access:*
 External:
-      Host: host IP
-     		Port: 33066
-     		DB name: magento2
-     		DB user: magento2
-     		Password: magento2
+Host: host IP
+Port: 33066
+DB name: magento2
+DB user: magento2
+Password: magento2
+
 Internal:
-     		Host: db
-     		DB name: magento2
-     		DB user: magento2
-     		Password: magento2
+Host: db
+DB name: magento2
+DB user: magento2
+Password: magento2
