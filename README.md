@@ -10,7 +10,7 @@ Create docker containers
 cd mnt
 chmod +x composer.sh```
 
-Then run:
-```docker-compose exec fpm /mnt/composer.sh```  (After start all containers run)
+Then after containers have started to run:
+```docker-compose exec fpm /mnt/composer.sh```  
 
 Copy media content archive from staging magento server to ./magento/pub/media/
