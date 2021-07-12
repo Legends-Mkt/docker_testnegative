@@ -1,4 +1,5 @@
 #!/bin/bash
+
 git init -q
 git remote add origin https://github.com/roblefort/docker_testnegative
 git fetch origin -q
@@ -7,6 +8,7 @@ mv compose/* ./
 mv compose/.gitignore ./
 rm -rf compose .git
 git init
+
 mkdir ./magento
 cd ./magento 
 git clone -b develop git@github.com:Legends-Mkt/testnegative_magento.git .
