@@ -1,4 +1,5 @@
-## docker_testnegative install directory
+## Install testnegative locally with Docker and Magento 2.3.4
+
 Create *testnegative* directory for docker install with magento locally 
 
 *From within the new directory*, run:
