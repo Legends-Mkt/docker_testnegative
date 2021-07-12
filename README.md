@@ -10,7 +10,7 @@ Copy env.php to ./magento/app/etc/
 
 Copy media content archive from staging magento server to ./magento/pub/media/
 
-Create docker containers from folder testnegative (runs docker-compose.yml)
+### Create docker containers from folder testnegative (runs docker-compose.yml)
 ```
 docker-compose up -d
 # change file permissions for composer.sh
@@ -19,24 +19,19 @@ chmod +x composer.sh
 ```
 
 Docker hostnames services in stack containers:
-db - databases
-
-fpm - php-fpm
-
-varnish - varnish service
-
-elasticsearch - elasticsearch service
-
-redis - redis service
-
-rabbitmq - rabbitmq service
+- db - databases
+- fpm - php-fpm
+- varnish - varnish service
+- elasticsearch - elasticsearch service
+- redis - redis service
+- rabbitmq - rabbitmq service
 
 Then after docker containers are all running:
 ```
 docker-compose exec fpm /mnt/composer.sh
 ```
 
-Edit hosts file and add line
+### Edit hosts file and add line
 ```
 127.0.0.1 	local.testnegative.com
 ```
@@ -46,7 +41,7 @@ ping localtestnegative.com
 curl -I local.testnegative.com
 ```
 
-Restore database backup from staging for new environment
+### Restore database backup from staging for new environment
 ```
 mysql -u magento2 -pmagento2 -h 127.0.0.1 -P33066
 use magento2;
@@ -64,7 +59,7 @@ UPDATE core_config_data SET value = 'https://local.testnegative.com/' WHERE conf
 UPDATE core_config_data SET value = 'https://local.testnegative.com/' WHERE config_id = '1653';
 ```
 
-Access to the container from folder testnegative in order to be able to run the commands of Magento CLI: (Path: /app)
+### Access to the container from folder testnegative in order to be able to run the Magento CLI: (Path: /app)
 ```
 docker exec -it testnegative_fpm_1 bash
 mkdir /var/www/.composer/
@@ -72,7 +67,7 @@ chown -R www-data /var/www/.composer/
 composer self-update --1 
 sudo -Hsu www-data
 ```
-Upgrade Magento:
+#### Upgrade Magento:
 ```
 composer install
 php bin/magento maintenance:enable
@@ -92,22 +87,15 @@ docker-compose exec varnish varnishadm 'ban req.url ~ .'
 
 External:
 
-Host: (host IP)
-
-Port: 33066
-
-DB name: magento2
-
-DB user: magento2
-
-Password: magento2
+- Host: (host IP)
+- Port: 33066
+- DB name: magento2
+- DB user: magento2
+- Password: magento2
 
 Internal:
 
-Host: db
-
-DB name: magento2
-
-DB user: magento2
-
-Password: magento2
+- Host: db
+- DB name: magento2
+- DB user: magento2
+- Password: magento2
