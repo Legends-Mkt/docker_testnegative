@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mkdir ./magento
+mkdir ./mnt
+cd ./magento 
+git clone -b develop git@github.com:Legends-Mkt/testnegative_magento.git .
