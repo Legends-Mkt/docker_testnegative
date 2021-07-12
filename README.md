@@ -7,6 +7,7 @@ Create *testnegative* directory for docker install with magento locally
 ```curl -s https://raw.githubusercontent.com/roblefort/docker_testnegative/main/lib/template | bash```
 
 Copy env.php to ./magento/app/etc/
+
 Copy media content archive from staging magento server to ./magento/pub/media/
 
 Create docker containers from folder testnegative (runs docker-compose.yml)
