@@ -7,3 +7,4 @@ php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Insta
 php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
 ln -s /usr/local/bin/composer /usr/bin/
 apt update && apt install -y git
+docker-php-ext-enable sodium && pkill -o -USR2 php-fpm
