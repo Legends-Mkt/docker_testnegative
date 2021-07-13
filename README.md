@@ -13,9 +13,6 @@ Copy media content archive from staging magento server to ./magento/pub/media/
 ### Create docker containers from folder testnegative (runs docker-compose.yml)
 ```
 docker-compose up -d
-# change file permissions for composer.sh
-cd mnt
-chmod +x composer.sh
 ```
 
 Docker hostnames services in stack containers:
@@ -28,6 +25,9 @@ Docker hostnames services in stack containers:
 
 Then after docker containers are all running:
 ```
+# change file permissions for composer.sh
+cd mnt
+chmod +x composer.sh
 docker-compose exec fpm /mnt/composer.sh
 ```
 
