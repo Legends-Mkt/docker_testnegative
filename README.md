@@ -7,7 +7,9 @@
 ```curl -s https://raw.githubusercontent.com/roblefort/docker_testnegative/main/lib/template | bash```
 
 Copy env.php to ./magento/app/etc/
-
+```
+mv env.php ./magento/app/etc
+```
 Copy backup of Media and DB from staging 
 ```
 bin/magento setup:backup --db --mediamedia 
