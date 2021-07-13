@@ -8,7 +8,10 @@
 
 Copy env.php to ./magento/app/etc/
 
-Copy media content archive from staging magento server to ./magento/pub/media/
+Copy backup of Media and DB from staging 
+```bin/magento setup:backup --db --mediamedia 
+```
+restore media backup into ./magento/pub/media/
 
 ### Create docker containers from folder testnegative (runs docker-compose.yml)
 ```
