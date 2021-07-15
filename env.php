@@ -63,6 +63,6 @@ return [
         ]
     ],
     'downloadable_domains' => [
-        'local.testnegative.com'
+        'testnegative.store'
     ]
 ];
