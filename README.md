@@ -38,21 +38,13 @@ docker-compose exec fpm /mnt/composer.sh
 ```
 Install SSL certificates
 ```
+chmod +x tls.sh
+cd ..
 docker-compose exec tls /mnt/tls.sh
 ```
 Clear varnish cache
 ```
-docker-compose exec varnish varnishadm 'ban req.url ~ .'
-```
-
-### Edit hosts file and add line
-```
-127.0.0.1 	local.testnegative.com
-```
-Check host
-```
-ping localtestnegative.com
-curl -I local.testnegative.com
+docker-compose exec tls /mnt/tls.sh
 ```
 
 ### Restore database backup from staging for new environment
@@ -65,12 +57,13 @@ source [/path/DBNAME.sql]
 Edit base url in magento DB
 ```use magento2;
 select * from core_config_data where path like '%base%url%';
-UPDATE core_config_data SET value = 'http://local.testnegative.com/' WHERE config_id = '2';
-UPDATE core_config_data SET value = 'http://local.testnegative.com/' WHERE config_id = '1436';
-UPDATE core_config_data SET value = 'http://local.testnegative.com/' WHERE config_id = '1652';
-UPDATE core_config_data SET value = 'https://local.testnegative.com/' WHERE config_id = '3';
-UPDATE core_config_data SET value = 'https://local.testnegative.com/' WHERE config_id = '1438';
-UPDATE core_config_data SET value = 'https://local.testnegative.com/' WHERE config_id = '1653';
+
+UPDATE core_config_data SET value = 'http://testnegative.store/' WHERE config_id = '2';
+UPDATE core_config_data SET value = 'http://testnegative.store/' WHERE config_id = '1436';
+UPDATE core_config_data SET value = 'http://testnegative.store/' WHERE config_id = '1652';
+UPDATE core_config_data SET value = 'https://testnegative.store/' WHERE config_id = '3';
+UPDATE core_config_data SET value = 'https://testnegative.store/' WHERE config_id = '1438';
+UPDATE core_config_data SET value = 'https://testnegative.store/' WHERE config_id = '1653';
 ```
 
 ### Access to the container from folder testnegative in order to be able to run the Magento CLI: (Path: /app)
