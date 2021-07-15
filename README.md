@@ -1,6 +1,6 @@
 # Install testnegative locally with Docker & Magento 2.3.4
 
-### Create *docker_testnegative* directory for docker install with magento locally 
+### Create *testnegative* directory for docker install with magento locally 
 
 **From within the new directory**, run:
 ```
@@ -17,7 +17,7 @@ bin/magento setup:backup --db --mediamedia
 ```
 Restore media backup into ./magento/pub/media/
 
-### Create docker containers from folder docker_testnegative (runs docker-compose.yml)
+### Create docker containers from folder testnegative (runs docker-compose.yml)
 ```
 docker-compose up -d
 ```
@@ -69,9 +69,9 @@ UPDATE core_config_data SET value = 'https://testnegative.store/' WHERE config_i
 UPDATE core_config_data SET value = 'https://testnegative.store/' WHERE config_id = '1653';
 ```
 
-### Access to the container from folder docker_testnegative in order to be able to run the Magento CLI: (Path: /app)
+### Access to the container from folder testnegative in order to be able to run the Magento CLI: (Path: /app)
 ```
-docker exec -it docker_testnegative_fpm_1 bash
+docker exec -it testnegative_fpm_1 bash
 mkdir /var/www/.composer/
 chown -R www-data /var/www/.composer/
 composer self-update --1 
