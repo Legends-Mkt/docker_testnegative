@@ -53,7 +53,7 @@ use magento2;
 source [/path/DBNAME.sql]
 ```
 
-Edit base url in magento DB
+Edit base url in magento DB and change domain to *testnegative.store*
 ```use magento2;
 select * from core_config_data where path like '%base%url%';
 
@@ -86,6 +86,7 @@ php bin/magento cache:c
 php bin/magento cache:f
 php bin/magento maintenance:disable
 ```
+Launch *https://testnegative.store*
 
 *MySQL access:*
 
