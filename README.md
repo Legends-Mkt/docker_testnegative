@@ -45,6 +45,8 @@ Clear varnish cache
 ```
 docker-compose exec tls /mnt/tls.sh
 ```
+### Edit hosts file
+``` 127.0.0.1   testnegative.store ```
 
 ### Restore database backup from staging for new environment
 ```
