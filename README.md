@@ -92,7 +92,7 @@ php bin/magento maintenance:disable
 ```
 Launch **https://testnegative.store** and accept SSL warning in browser
 
-***MySQL access:**
+**MySQL access:**
 
 External:
 
