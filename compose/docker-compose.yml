@@ -69,6 +69,8 @@ services:
   tls:
     hostname: tls.claude
     image: 'magento/magento-cloud-docker-nginx:1.19-1.2.0'
+    volumes:
+      - './mnt:/mnt:rw,delegated'
     networks:
       magento:
         aliases:
@@ -120,3 +122,4 @@ services:
 networks:
   magento:
     driver: bridge
+
