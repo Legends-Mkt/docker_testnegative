@@ -36,6 +36,14 @@ cd mnt
 chmod +x composer.sh
 docker-compose exec fpm /mnt/composer.sh
 ```
+Install SSL certificates
+```
+docker-compose exec tls /mnt/tls.sh
+```
+Clear varnish cache
+```
+docker-compose exec varnish varnishadm 'ban req.url ~ .'
+```
 
 ### Edit hosts file and add line
 ```
@@ -85,10 +93,6 @@ php bin/magento setup:static-content:deploy -f
 php bin/magento cache:c
 php bin/magento cache:f
 php bin/magento maintenance:disable
-```
-Clearing Varnish cache if need:
-```
-docker-compose exec varnish varnishadm 'ban req.url ~ .'
 ```
 
 *MySQL access:*
