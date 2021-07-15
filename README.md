@@ -2,8 +2,10 @@
 
 ### Create *docker_testnegative* directory for docker install with magento locally 
 
-*From within the new directory*, run:
-```curl -s https://raw.githubusercontent.com/roblefort/docker_testnegative/main/lib/template | bash```
+**From within the new directory**, run:
+```
+curl -s https://raw.githubusercontent.com/roblefort/docker_testnegative/main/lib/template | bash
+```
 
 Copy env.php to ./magento/app/etc/
 ```
@@ -55,7 +57,7 @@ use magento2;
 source [/path/DBNAME.sql]
 ```
 
-Edit base url in magento DB and change domain to *testnegative.store*
+Edit base url in magento DB and change domain to **testnegative.store**
 ```use magento2;
 select * from core_config_data where path like '%base%url%';
 
@@ -88,9 +90,9 @@ php bin/magento cache:c
 php bin/magento cache:f
 php bin/magento maintenance:disable
 ```
-Launch *https://testnegative.store*
+Launch **https://testnegative.store** and accept SSL warning in browser
 
-*MySQL access:*
+***MySQL access:**
 
 External:
 
