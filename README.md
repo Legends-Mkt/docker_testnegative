@@ -48,7 +48,7 @@ docker-compose exec tls /mnt/tls.sh
 ```
 Clear varnish cache
 ```
-docker-compose exec tls /mnt/tls.sh
+docker-compose exec varnish varnishadm 'ban req.url ~ .'
 ```
 ### Edit hosts file
 ``` 127.0.0.1   testnegative.store ```
