@@ -19,7 +19,7 @@ mv env.php ./magento/app/etc
 Restore pub/media folder from backup archive
 ```
 mkdir -p magento/pub/media
-tar -xzvf [source path]/pub_media.tgz -C magento/pub/media
+tar -xzvf [source path]/xxxxxxxx_filesystem_media.tgz -C magento/pub/media
 ```
 ### Create docker containers from folder testnegative (runs docker-compose.yml)
 ```
