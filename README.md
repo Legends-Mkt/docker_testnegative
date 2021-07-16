@@ -1,28 +1,30 @@
 # Install testnegative locally with Docker & Magento 2.3.4
 
+Estimated Time to install: 45 min.
+
+### Backup pub/media and database from staging server
+```
+bin/magento setup:backup --db --mediamedia 
+```
+Retrieve backup files from var/backups/.. and download files to local machine
+
 ### Create *testnegative* directory for docker install with magento locally 
 
 **From within the new directory**, run:
 ```
 curl -s https://raw.githubusercontent.com/roblefort/docker_testnegative/main/lib/template | bash
 ```
-
 Copy env.php to ./magento/app/etc/
 ```
 mv env.php ./magento/app/etc
 ```
-Copy backup of Media and DB from staging 
-```
-bin/magento setup:backup --db --mediamedia 
-```
-Restore media backup into ./magento/pub/media/
+Restore pub/media folder from backup archive
 
 ### Create docker containers from folder testnegative (runs docker-compose.yml)
 ```
 docker-compose up -d
 ```
-
-Docker hostnames services in stack containers:
+**Docker hostnames services in stack containers:**
 - db - databases
 - fpm - php-fpm
 - varnish - varnish service
