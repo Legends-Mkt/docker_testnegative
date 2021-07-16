@@ -1,7 +1,5 @@
 # Install testnegative locally with Docker & Magento 2.3.4
 
-Estimated Time to install: 45 min.
-
 ### Backup pub/media and database from staging server
 ```
 bin/magento setup:backup --db --mediamedia 
