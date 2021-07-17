@@ -97,7 +97,7 @@ php bin/magento maintenance:disable
 Launch **https://testnegative.store** and accept SSL warning in browser
 
 Set developer mode
-````
+```
 docker exec -it testnegative_fpm_1 bash
 rm -rf generated/metadata/* generated/code/*
 bin/magento deploy:mode:set developer
