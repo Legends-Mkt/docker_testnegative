@@ -89,18 +89,30 @@ php bin/magento maintenance:enable
 php bin/magento setup:upgrade
 php bin/magento setup:di:compile
 php bin/magento setup:static-content:deploy -f
-php bin/magento config:set admin/captcha/enable 0
 php bin/magento cache:c
 php bin/magento cache:f
 php bin/magento maintenance:disable
 ```
 Launch **https://testnegative.store** and accept SSL warning in browser
 
-Set developer mode
+#### Setting developer mode
 ```
 docker exec -it testnegative_fpm_1 bash
+sudo -Hsu www-data
+php bin/magento maintenance:enable
+
+# run outside container
+docker-compose exec varnish varnishadm 'ban req.url ~ .'
+
 rm -rf generated/metadata/* generated/code/*
 bin/magento deploy:mode:set developer
+php bin/magento setup:static-content:deploy -f
+php bin/magento cache:c
+php bin/magento cache:f
+php bin/magento maintenance:disable
+
+# run outside container
+docker-compose exec varnish varnishadm 'ban req.url ~ .'
 ```
 
 **MySQL access:**
