@@ -1,6 +1,6 @@
 #!/bin/bash
 git init -q
-git remote add origin https://github.com/roblefort/docker_testnegative
+git remote add origin https://github.com/Legends-Mkt/docker_testnegative
 git fetch origin -q
 git checkout origin/master -- compose
 mv compose/* ./
