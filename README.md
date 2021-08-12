@@ -91,9 +91,9 @@ php bin/magento maintenance:enable
 php bin/magento setup:upgrade
 php bin/magento setup:di:compile
 php bin/magento setup:static-content:deploy -f
-      php bin/magento config:set admin/captcha/enable 0
-      php bin/magento admin:user:unlock claudeadmin
-      php bin/magento indexer:reindex
+php bin/magento config:set admin/captcha/enable 0
+php bin/magento admin:user:unlock claudeadmin
+php bin/magento indexer:reindex
 php bin/magento c:c
 php bin/magento c:f
 php bin/magento maintenance:disable
