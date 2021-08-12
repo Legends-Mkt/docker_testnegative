@@ -10,7 +10,7 @@ Retrieve backup files from var/backups/.. and download files to local machine
 
 **From within the new directory**, run:
 ```
-curl -s https://raw.githubusercontent.com/roblefort/docker_testnegative/main/lib/template | bash
+curl -s https://raw.githubusercontent.com/Legends-Mkt/docker_testnegative/main/lib/template | bash
 ```
 Copy env.php to ./magento/app/etc/
 ```
