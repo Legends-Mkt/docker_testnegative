@@ -127,6 +127,11 @@ php bin/magento maintenance:disable
 # run outside container
 docker-compose exec varnish varnishadm 'ban req.url ~ .'
 ```
+** TO RUN CLI FOR MAGENTO FROM CONTAINER ***
+````
+docker exec -it testnegative_fpm_1 bash
+sudo -Hsu www-data
+```
 
 **MySQL access:**
 
