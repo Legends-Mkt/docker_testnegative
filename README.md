@@ -90,18 +90,22 @@ composer install
 php bin/magento maintenance:enable
 php bin/magento setup:upgrade
 php bin/magento setup:di:compile
-# Set permission from host
-rm -rf ./pub/static/_cache   ./pub/static/adminhtml/*  ./pub/static/frontend/*  ./pub/static/deployed_version.txt
-
 php bin/magento setup:static-content:deploy -f
-php bin/magento cache:c
-php bin/magento cache:f
+      php bin/magento config:set admin/captcha/enable 0
+      php bin/magento admin:user:unlock claudeadmin
+      php bin/magento indexer:reindex
+php bin/magento c:c
+php bin/magento c:f
 php bin/magento maintenance:disable
 exit
 exit
-Set permission:
+# Set file permissions:
 cd ./magento
-find . -type f -exec chmod 644 {} \; && find . -type d -exec chmod 755 {} \; && find ./var -type d -exec chmod 777 {} \; && find ./pub/media -type d -exec chmod 777 {} \; && find ./pub/static -type d -exec chmod 777 {} \; && chmod 777 ./app/etc && chmod 644 ./app/etc/*.xml && chown -R 33:33 . && chmod u+x bin/magento
+find . -type f -exec chmod 644 {} \; && find . -type d -exec chmod 755 {} \; && find ./var -type d -exec chmod 777 {} \; && find ./pub/media -type d -exec chmod 777 {} \; && find ./pub/static -type d -exec chmod 777 {} \; && chmod 777 ./app/etc && chmod 644 ./app/etc/*.xml && chmod u+x bin/magento
+
+# Clearing Varnish cache:
+docker-compose exec varnish varnishadm 'ban req.url ~ .'
+
 
 ```
 Launch **https://testnegative.store** and accept SSL warning in browser
