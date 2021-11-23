@@ -48,13 +48,12 @@ docker-compose exec varnish varnishadm 'ban req.url ~ .'
 ### Edit hosts file
 ``` 127.0.0.1   testnegative.store ```
 
-### Restore database backup from staging for new environment
+### Restore database backup from server for new Docker environment
 ```
 mysql -u magento2 -pmagento2 -h 127.0.0.1 -P33066
 use magento2;
-source [/path/DBNAME.sql]
+source testnegative/testnegativepre_live.sql
 ```
-
 Edit base url in magento DB and change domain to **testnegative.store**
 ```use magento2;
 select * from core_config_data where path like '%base%url%';
