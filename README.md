@@ -3,7 +3,7 @@
 ### Backup database from origin server
 ```
 ssh testnegative@128.199.229.20 "mysqldump -u testnegative -p --no-tablespaces testnegativepre_live | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/'" > testnegativepre_live.sql
-
+```
 ### Retrieve DB backup files from server and download file to local machine
 
 ### Create *testnegative* directory for docker install with magento locally 
