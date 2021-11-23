@@ -1,10 +1,5 @@
 # Install testnegative locally with Docker & Magento 2.4.3
 
-### Backup database from origin server (example with DEV3)
-#### Retrieve DB backup sql file from server (backups dir) and download file to local machine using SFTP
-```
-ssh testnegative@128.199.229.20 "mysqldump -u testnegative -p --no-tablespaces testnegativepre_live | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/'" > testnegativepre_live.sql
-```
 ### Create *testnegative* directory for docker install with magento locally 
 
 **From within the new directory**, run:
@@ -50,9 +45,11 @@ docker-compose exec varnish varnishadm 'ban req.url ~ .'
 
 ### Restore database backup from server for new Docker environment
 ```
+ssh testnegative@128.199.229.20 "mysqldump -u testnegative -p --no-tablespaces testnegativepre_live | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/'" > testnegativepre_live.sql
+
 mysql -u magento2 -pmagento2 -h 127.0.0.1 -P33066
 use magento2;
-source testnegative/testnegativepre_live.sql
+source testnegativepre_live.sql
 ```
 Edit base url in magento DB and change domain to **testnegative.store**
 ```use magento2;
