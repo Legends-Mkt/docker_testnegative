@@ -1,6 +1,6 @@
 # Install testnegative locally with Docker & Magento 2.4.3
 
-### Backup pub/media and database from staging server
+### Backup pub/media and database from origin server
 ```
 bin/magento setup:backup --db --mediamedia 
 ```
@@ -12,9 +12,10 @@ Retrieve backup files from var/backups/.. and download files to local machine
 ```
 curl -s https://raw.githubusercontent.com/Legends-Mkt/docker_testnegative/master/lib/template | bash
 ```
-Copy env.php to ./magento/app/etc/
+Copy env.php and config.php to ./magento/app/etc/
 ```
 mv env.php ./magento/app/etc
+mv config.php ./magento/app/etc
 ```
 Restore pub/media folder from backup archive
 ```
