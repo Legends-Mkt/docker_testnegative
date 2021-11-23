@@ -2,7 +2,7 @@
 
 ### Backup pub/media and database from origin server
 ```
-bin/magento setup:backup --db --mediamedia 
+bin/magento setup:backup --media --db 
 ```
 Retrieve backup files from var/backups/.. and download files to local machine
 
