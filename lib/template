@@ -10,3 +10,8 @@ git init
 mkdir ./magento
 cd ./magento 
 git clone -b pre-master-dev3 git@github.com:Legends-Mkt/testnegative_magento.git .
+cd ./app
+mkdir ./etc
+cd ./etc
+cp /Users/max/Dropbox/DEV/LEGENDS/docker_testnegative/compose/env.php env.php
+cp /Users/max/Dropbox/DEV/LEGENDS/docker_testnegative/compose/config.php config.php
