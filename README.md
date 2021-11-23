@@ -64,13 +64,10 @@ UPDATE core_config_data SET value = 'https://testnegative.store/' WHERE config_i
 
 ### Access to the container from folder testnegative to run the Magento CLI: (Path: /app)
 ```
-chown -R 33:33 ./magento/
+**docker exec -it testnegative_fpm_1 bash**
 
-docker exec -it testnegative_fpm_1 bash
-
-mkdir /var/www/.composer/
-chown -R www-data /var/www/.composer/
-composer self-update --1 
+mkdir -p var/www/.composer/
+chown -R www-data /var/www/.composer/ 
 ```
 #### Upgrade Magento:
 ```
