@@ -4,7 +4,7 @@
 ```
 ssh testnegative@128.199.229.20 "mysqldump -u testnegative -p --no-tablespaces testnegativepre_live | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/'" > testnegativepre_live.sql
 ```
-### Retrieve DB backup files from server and download file to local machine using SFTP
+### Retrieve DB backup sql file from server (backups dor) and download file to local machine using SFTP
 
 ### Create *testnegative* directory for docker install with magento locally 
 
