@@ -1,11 +1,10 @@
 # Install testnegative locally with Docker & Magento 2.4.3
 
 ### Backup database from origin server (example with DEV3)
+#### Retrieve DB backup sql file from server (backups dir) and download file to local machine using SFTP
 ```
 ssh testnegative@128.199.229.20 "mysqldump -u testnegative -p --no-tablespaces testnegativepre_live | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/'" > testnegativepre_live.sql
 ```
-### Retrieve DB backup sql file from server (backups dor) and download file to local machine using SFTP
-
 ### Create *testnegative* directory for docker install with magento locally 
 
 **From within the new directory**, run:
