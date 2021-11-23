@@ -7,8 +7,8 @@ mv compose/* ./
 mv compose/.gitignore ./
 rm -rf compose .git
 git init
-mkdir -p ./magento/app/etc
-mkdir -p ./magento/pub
+mkdir -v -p ./magento/app/etc
+mkdir -v -p ./magento/pub
 mv env.php ./magento/app/etc
 mv config.php ./magento/app/etc
 cd ./magento 
