@@ -11,16 +11,9 @@ ssh testnegative@128.199.229.20 "mysqldump -u testnegative -p --no-tablespaces t
 ```
 curl -s https://raw.githubusercontent.com/Legends-Mkt/docker_testnegative/master/lib/template | bash
 ```
-Copy env.php and config.php to ./magento/app/etc/
-```
-mv env.php ./magento/app/etc
-mv config.php ./magento/app/etc
-```
 Copy media folder from server into magento/pub
 ```
-cd ./magento
-mkdir ./pub
-cd ./pub
+cd ./magento/pub
 rsync --verbose --progress --stats --recursive --times --links --update testnegative@128.199.229.20:/var/www/testnegative.com/public_html/pub/media .
 ```
 ### Create docker containers from folder testnegative (runs docker-compose.yml)
