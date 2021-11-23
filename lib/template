@@ -9,6 +9,7 @@ rm -rf compose .git
 git init
 mkdir ./magento
 mkdir ./magento/app/etc
+mkdir ./magento/pub
 mv env.php ./magento/app/etc
 mv config.php ./magento/app/etc
 cd ./magento 
