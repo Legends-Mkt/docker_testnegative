@@ -1,4 +1,4 @@
-# Install testnegative locally with Docker & Magento 2.3.4
+# Install testnegative locally with Docker & Magento 2.4.3
 
 ### Backup pub/media and database from staging server
 ```
