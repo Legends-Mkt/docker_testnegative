@@ -8,7 +8,6 @@ curl -s https://raw.githubusercontent.com/Legends-Mkt/docker_testnegative/master
 ```
 Copy media folder from server into magento/pub
 ```
-Copy the media content archive to ./magento/pub/media/
 rsync --verbose --progress --stats --recursive --times --links --update testnegative@128.199.229.20:/var/www/testnegative.com/public_html/pub/media ./magento/pub
 ```
 ### Create docker containers from folder testnegative (runs docker-compose.yml)
