@@ -64,7 +64,7 @@ UPDATE core_config_data SET value = 'https://testnegative.store/' WHERE config_i
 
 ### Access to the container from folder testnegative to run the Magento CLI: (Path: /app)
 ```
-**docker exec -it testnegative_fpm_1 bash**
+docker exec -it testnegative_fpm_1 bash
 
 mkdir -p var/www/.composer/
 chown -R www-data /var/www/.composer/ 
