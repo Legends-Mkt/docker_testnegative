@@ -1,10 +1,10 @@
 # Install testnegative locally with Docker & Magento 2.4.3
 
-### Backup pub/media and database from origin server
+### Backup database from origin server
 ```
-bin/magento setup:backup --media --db 
-```
-Retrieve backup files from var/backups/.. and download files to local machine
+ssh testnegative@128.199.229.20 "mysqldump -u testnegative -p --no-tablespaces testnegativepre_live | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/'" > testnegativepre_live.sql
+
+### Retrieve DB backup files from server and download file to local machine
 
 ### Create *testnegative* directory for docker install with magento locally 
 
@@ -17,9 +17,12 @@ Copy env.php and config.php to ./magento/app/etc/
 mv env.php ./magento/app/etc
 mv config.php ./magento/app/etc
 ```
-Restore pub/media folder from backup archive
+Copy media folder from server into magento/pub
 ```
-tar -xzvf [source path]/xxxxxxxx_filesystem_media.tgz -C magento
+cd ./magento
+mkdir ./pub
+cd ./pub
+rsync --verbose --progress --stats --recursive --times --links --update testnegative@128.199.229.20:/var/www/testnegative.com/public_html/pub/media .
 ```
 ### Create docker containers from folder testnegative (runs docker-compose.yml)
 ```
