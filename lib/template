@@ -8,10 +8,8 @@ mv compose/.gitignore ./
 rm -rf compose .git
 git init
 mkdir ./magento
+mkdir ./magento/app/etc
+mv env.php ./magento/app/etc
+mv config.php ./magento/app/etc
 cd ./magento 
 git clone -b pre-master-dev3 git@github.com:Legends-Mkt/testnegative_magento.git .
-cd ./app
-mkdir ./etc
-cd ./etc
-cp /Users/max/Dropbox/DEV/LEGENDS/docker_testnegative/compose/env.php env.php
-cp /Users/max/Dropbox/DEV/LEGENDS/docker_testnegative/compose/config.php config.php
