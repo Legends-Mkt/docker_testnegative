@@ -18,6 +18,9 @@ return [
                 'model' => 'mysql4',
                 'engine' => 'innodb',
                 'initStatements' => 'SET NAMES utf8;'
+                'driver_options' => [
+                    1014 => false
+                ]
             ]
         ]
     ],
@@ -27,7 +30,7 @@ return [
         ]
     ],
     'x-frame-options' => 'SAMEORIGIN',
-    'MAGE_MODE' => 'production',
+    'MAGE_MODE' => 'developer',
     'session' => [
         'save' => 'files'
     ],
@@ -42,7 +45,7 @@ return [
         'customer_notification' => 1,
         'config_integration' => 1,
         'config_integration_api' => 1,
-        'full_page' => 0,
+        'full_page' => 1,
         'config_webservice' => 1,
         'translate' => 1,
         'compiled_config' => 1,
@@ -55,14 +58,30 @@ return [
     'cache' => [
         'frontend' => [
             'default' => [
-                'id_prefix' => '850_'
+                'id_prefix' => 'f8c_'
             ],
             'page_cache' => [
-                'id_prefix' => '850_'
+                'id_prefix' => 'f8c_'
             ]
-        ]
+        ],
+        'allow_parallel_generation' => false
     ],
     'downloadable_domains' => [
         'testnegative.store'
+    ],
+    'remote_storage' => [
+        'driver' => 'file'
+    ],
+    'queue' => [
+        'consumers_wait_for_messages' => 1
+    ],
+    'lock' => [
+        'provider' => 'db',
+        'config' => [
+            'prefix' => null
+        ]
+    ],
+    'directories' => [
+        'document_root_is_pub' => true
     ]
 ];
