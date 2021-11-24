@@ -66,7 +66,7 @@ exit
 docker exec -it testnegative_fpm_1 bash
 ```
 #### Upgrade Magento:
-**NB: during composer install, when prompted enter credentials (user name + password) inclused in auth.json file**
+**NB: during composer install, enter repo credentials (user name + password) found in auth.json file**
 ```
 mkdir -p var/www/.composer/
 chown -R www-data /var/www/.composer/
