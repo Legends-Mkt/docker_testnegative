@@ -27,7 +27,10 @@ Then after docker containers are all running:
 # change file permissions for composer.sh
 cd mnt
 chmod +x composer.sh
-docker-compose exec fpm /mnt/composer.sh
+cd ..
+
+docker-compose exec fpm /mnt/composer.sh  
+
 ```
 Install SSL certificates
 ```
