@@ -6,7 +6,7 @@
 ```
 curl -s https://raw.githubusercontent.com/Legends-Mkt/docker_testnegative/master/lib/template | bash
 ```
-** clone repo **
+**Clone Testnegative Repo*
 ```
 cd ./magento 
 git clone -b pre-master-dev3 git@github.com:Legends-Mkt/testnegative_magento.git .
