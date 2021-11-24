@@ -53,7 +53,7 @@ use magento2;
 source testnegativepre_live.sql
 ```
 Edit base url in magento DB and change domain to **testnegative.store**
-```use magento2;
+```
 select * from core_config_data where path like '%base%url%';
 
 UPDATE core_config_data SET value = 'http://testnegative.store/' WHERE config_id = '2';
