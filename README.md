@@ -31,16 +31,6 @@ cd ..
 
 docker-compose exec fpm /mnt/composer.sh  
 ```
-Install SSL certificates
-```
-chmod +x tls.sh
-cd ..
-docker-compose exec tls /mnt/tls.sh
-```
-Clear varnish cache
-```
-docker-compose exec varnish varnishadm 'ban req.url ~ .'
-```
 ### Edit hosts file
 ``` 127.0.0.1   testnegative.store ```
 
@@ -74,9 +64,6 @@ docker exec -it testnegative_fpm_1 bash
 ```
 mkdir -p var/www/.composer/
 chown -R www-data /var/www/.composer/
-
-# switch to web user
-sudo -Hsu www-data
 
 composer install
 php bin/magento config:set catalog/search/engine 'elasticsearch7'
