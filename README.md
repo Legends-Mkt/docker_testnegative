@@ -69,7 +69,6 @@ exit
 ### Access to the container from folder testnegative to run the Magento CLI: (Path: /app)
 ```
 docker exec -it testnegative_fpm_1 bash
-
 ```
 #### Upgrade Magento:
 ```
@@ -90,14 +89,14 @@ php bin/magento maintenance:enable
 php bin/magento setup:upgrade
 php bin/magento setup:di:compile
 php bin/magento setup:static-content:deploy -f
-      php bin/magento c:c
+php bin/magento c:c
 php bin/magento c:f
 php bin/magento maintenance:disable
 exit
-Set permission:
+
+# Set permission:
 cd ./magento
 find . -type f -exec chmod 644 {} \; && find . -type d -exec chmod 755 {} \; && find ./var -type d -exec chmod 777 {} \; && find ./pub/media -type d -exec chmod 777 {} \; && find ./pub/static -type d -exec chmod 777 {} \; && chmod 777 ./app/etc && chmod 644 ./app/etc/*.xml && chmod u+x bin/magento
-
 ```
 Launch **https://testnegative.store** and accept SSL warning in browser
 
