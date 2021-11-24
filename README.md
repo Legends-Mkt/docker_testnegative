@@ -30,7 +30,6 @@ chmod +x composer.sh
 cd ..
 
 docker-compose exec fpm /mnt/composer.sh  
-
 ```
 Install SSL certificates
 ```
