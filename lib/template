@@ -10,5 +10,3 @@ git init
 mkdir -v -p ./magento/app/etc
 mv env.php ./magento/app/etc
 mv config.php ./magento/app/etc
-cd ./magento 
-git clone -b pre-master-dev3 git@github.com:Legends-Mkt/testnegative_magento.git .
