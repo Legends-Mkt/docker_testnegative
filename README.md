@@ -62,6 +62,8 @@ UPDATE core_config_data SET value = 'http://testnegative.store/' WHERE config_id
 UPDATE core_config_data SET value = 'https://testnegative.store/' WHERE config_id = '3';
 UPDATE core_config_data SET value = 'https://testnegative.store/' WHERE config_id = '1438';
 UPDATE core_config_data SET value = 'https://testnegative.store/' WHERE config_id = '1653';
+
+exit
 ```
 
 ### Access to the container from folder testnegative to run the Magento CLI: (Path: /app)
