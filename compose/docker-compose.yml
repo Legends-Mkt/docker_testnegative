@@ -65,7 +65,7 @@ services:
     image: 'magento/magento-cloud-docker-elasticsearch:7.11-1.2.4'
     environment:
       - "discovery.type=single-node"
-      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     networks:
       magento:
         aliases:
