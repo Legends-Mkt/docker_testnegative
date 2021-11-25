@@ -8,6 +8,7 @@ curl -s https://raw.githubusercontent.com/Legends-Mkt/docker_testnegative/master
 ```
 **Clone Testnegative Repo**
 ```
+mkdir ./magento
 cd ./magento 
 git clone -b pre-master-dev3 git@github.com:Legends-Mkt/testnegative_magento.git .
 ```
