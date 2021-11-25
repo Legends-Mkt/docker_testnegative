@@ -30,10 +30,8 @@ docker-compose up -d
 **Docker hostnames services in stack containers:**
 - db - databases
 - fpm - php-fpm
-- varnish - varnish service
 - elasticsearch - elasticsearch service
-- redis - redis service
-- rabbitmq - rabbitmq service
+- web - web service
 
 Then after docker containers are all running:
 ```
