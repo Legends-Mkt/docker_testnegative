@@ -73,9 +73,6 @@ docker exec -it testnegative-fpm-1 bash
 #### Upgrade Magento:
 **NB: during composer install, enter repo.magento.com credentials (username + password) found in auth.json**
 ```
-mkdir -p var/www/.composer/
-chown -R www-data /var/www/.composer/
-
 composer install
 php bin/magento config:set catalog/search/engine 'elasticsearch7'
 php bin/magento config:set catalog/search/elasticsearch7_server_hostname 'elasticsearch'
