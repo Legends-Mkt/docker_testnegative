@@ -14,6 +14,7 @@ git clone -b pre-master-dev3 git@github.com:Legends-Mkt/testnegative_magento.git
 ```
 **Copy env and config to app/etc**
 ```
+cd ..
 mkdir -v -p ./magento/app/etc
 mv env.php ./magento/app/etc
 mv config.php ./magento/app/etc
