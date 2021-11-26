@@ -7,3 +7,4 @@ mv compose/* ./
 mv compose/.gitignore ./
 rm -rf compose .git
 git init
+mkdir ./magento
