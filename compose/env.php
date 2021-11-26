@@ -17,7 +17,7 @@ return [
                 'active' => '1',
                 'model' => 'mysql4',
                 'engine' => 'innodb',
-                'initStatements' => 'SET NAMES utf8;'
+                'initStatements' => 'SET NAMES utf8;',
                 'driver_options' => [
                     1014 => false
                 ]
