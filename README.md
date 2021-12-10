@@ -67,9 +67,7 @@ exit
 
 ### Access to the container in order to be able to run the commands of Magento CLI:: (Path: /app)
 ```
-docker exec -it testnegative_fpm_1 bash (Linux)
-OR
-docker exec -it testnegative-fpm-1 bash (Mac)
+docker exec -it testnegative_fpm_1 bash (Mac)
 ```
 #### Upgrade Magento:
 **NB: during composer install, enter repo.magento.com credentials (username + password) found in auth.json**
