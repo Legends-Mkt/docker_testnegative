@@ -75,18 +75,20 @@ docker exec -it testnegative-fpm-1 bash (Mac)
 **NB: during composer install, enter repo.magento.com credentials (username + password) found in auth.json**
 ```
 composer install
-php bin/magento config:set catalog/search/engine 'elasticsearch7'
-php bin/magento config:set catalog/search/elasticsearch7_server_hostname 'elasticsearch'
-php bin/magento config:set catalog/search/elasticsearch7_server_port '9200'
-php bin/magento config:set catalog/search/elasticsearch7_index_prefix 'magento2'
-php bin/magento config:set catalog/search/elasticsearch5_enable_auth '0'
-php bin/magento config:set catalog/search/elasticsearch5_server_timeout '15'
-php bin/magento maintenance:enable
-php bin/magento setup:upgrade
-php bin/magento setup:di:compile
-php bin/magento setup:static-content:deploy -f
-php bin/magento cache:clean && bin/magento cache:flush
-php bin/magento maintenance:disable
+bin/magento config:set catalog/search/engine 'elasticsearch7'
+bin/magento config:set catalog/search/elasticsearch7_server_hostname 'elasticsearch'
+bin/magento config:set catalog/search/elasticsearch7_server_port '9200'
+bin/magento config:set catalog/search/elasticsearch7_index_prefix 'magento2'
+bin/magento config:set catalog/search/elasticsearch5_enable_auth '0'
+bin/magento config:set catalog/search/elasticsearch5_server_timeout '15'
+bin/magento maintenance:enable
+bin/magento setup:upgrade
+bin/magento setup:di:compile
+bin/magento setup:static-content:deploy -f
+bin/magento cache:clean && bin/magento cache:flush
+bin/magento maintenance:disable
+bin/magento deploy:mode:set developer
+
 exit
 ```
 #### Set file permissions:
